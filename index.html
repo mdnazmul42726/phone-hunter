@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <!-- Meta information and title of the webpage -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+
+    <!-- CSS styling from DaisyUI and Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- Header section with the app title and search input -->
+    <header class="py-5 px-10 bg-[#f3f1f1] fixed w-full z-10 shadow-md">
+        <div class="flex justify-between">
+            <h1 class="text-3xl font-bold">Phone <span class="text-red-600">Hunter</span> </h1>
+            <div class="flex gap-4">
+                <input type="text" placeholder="Search..." class="input input-bordered w-full max-w-xs"
+                    id="search-input-filed" />
+                <button class="btn btn-outline btn-primary" onclick="searchBtn()">Search</button>
+            </div>
+        </div>
+    </header>
+    <br>
+    <hr>
+
+    <main>
+        <!-- Section for displaying phone cards -->
+        <section class="mt-40">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 m-10" id="card-container"></div>
+
+            <!-- Loading spinner for indicating data loading -->
+            <div class="flex justify-center hidden" id="loading-spinner">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+        </section>
+
+        <!-- Button to show all phones -->
+        <div class="flex justify-center mb-5 hidden" id="show-all-btn-container">
+            <button class="btn btn-active btn-secondary" id="show-all-btn" onclick="showBllBtn()">Show All</button>
+        </div>
+
+        <!-- Modal for displaying phone details -->
+        <div class="">
+            <dialog id="show_Phone_Info" class="modal modal-bottom sm:modal-middle">
+                <form method="dialog" class="modal-box">
+                    <!-- Phone details displayed in the modal -->
+                    <h3 class="font-bold text-xl" id="show-phone-modal-name"></h3>
+                    <br>
+                    <h3>Storage <span id="modal-memory"></span> </h3>
+                    <h3>Display Size: <span id="modal-display"></span> </h3>
+                    <h3>Chipset: <span id="modal-chipset"></span> </h3>
+                    <h3>Memory: <span id="modal-storage"></span> </h3>
+                    <h3>Slug: <span id="modal-slug"></span> </h3>
+                    <h3>Release data: <span id="modal-Release-date"></span> </h3>
+                    <h3>Brand: <span id="modal-brand"></span> </h3>
+                    <!-- Sensor information could be included if needed -->
+                    <!-- <h3>Sensor: <span id="modal-GPS"></span> </h3> -->
+
+                    <!-- Modal action buttons -->
+                    <div class="modal-action">
+                        <!-- Button to close the modal -->
+                        <button class="btn">Close</button>
+                    </div>
+                </form>
+            </dialog>
+        </div>
+    </main>
+
+    <!-- Footer section if needed -->
+    <footer>
+    </footer>
+
+    <!-- Link to the JavaScript file for functionality -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
